@@ -15,8 +15,14 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int			num;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct	s_stack
+{
+	t_list	*top;
+	t_list	*bottom;
+}	t_stack;
 
 #endif
