@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pop_push_func.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/01 21:24:31 by changhyl          #+#    #+#             */
+/*   Updated: 2023/06/01 21:24:32 by changhyl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "push_swap.h"
 
-t_stack* init_stack()
+t_stack*	init_stack()
 {
 	t_stack	*s;
 	s->top = NULL;
@@ -31,11 +43,12 @@ void	pop_push(t_stack *st_from, t_stack *st_to)
 	}
 	while (temp->next != st_from->top)
 	{
-		if (st_to->bottom == NULL)
-			st_to->bottom = temp->next;
-		st_to->top->next = temp->next;
-		st_to->top = temp->next;
-		from->top = temp;
-		temp->next = NULL;
+		temp = temp->next;
 	}
+	if (st_to->bottom == NULL)
+		st_to->bottom = temp->next;
+	st_to->top->next = temp->next;
+	st_to->top = temp->next;
+	from->top = temp;
+	temp->next = NULL;
 }
