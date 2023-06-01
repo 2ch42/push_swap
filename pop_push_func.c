@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include "push_swap.h"
+
 t_stack* init_stack()
 {
 	t_stack	*s;
@@ -29,14 +32,10 @@ void	pop_push(t_stack *st_from, t_stack *st_to)
 	while (temp->next != st_from->top)
 	{
 		if (st_to->bottom == NULL)
-		{
-			pop_push_null(st_from, st_to, temp);
-			return;
-		}
+			st_to->bottom = temp->next;
 		st_to->top->next = temp->next;
 		st_to->top = temp->next;
 		from->top = temp;
+		temp->next = NULL;
 	}
 }
-
-//지금은 보내는쪽이 하나만 있는경우랑 null인 경우함. 받는쪽이 null인 경우도 넣어야함.
