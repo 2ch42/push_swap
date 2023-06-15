@@ -6,22 +6,14 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:31 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/01 21:31:30 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/14 20:22:28 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-t_stack*	init_stack()
-{
-	t_stack	*s;
-	s->top = NULL;
-	s->bottom = NULL;
-	return (s);
-}
-
-void	pop_push_one(t_stack *st_from, t_stack *st_to)
+static void	pop_push_one(t_stack *st_from, t_stack *st_to)
 {
 	st_to->top->next = st_from->top;
 	st_to->top = st_from->top;

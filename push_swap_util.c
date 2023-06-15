@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_func.c                                      :+:      :+:    :+:   */
+/*   push_swap_util.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 21:24:37 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/14 21:10:32 by changhyl         ###   ########.fr       */
+/*   Created: 2023/06/14 20:21:57 by changhyl          #+#    #+#             */
+/*   Updated: 2023/06/14 21:12:18 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-void	rotate(t_stack *st_rot)
+t_stack	*init_stack(void)
 {
-	t_list	*temp;
+	t_stack	*s;
 
-	if (st_rot->bottom != NULL && st_rot->bottom->next != NULL)
-	{
-		temp = st_rot->bottom;
-		while (temp->next != st_rot->top)
-			temp = temp->next;
-		st_rot->top->next = st_rot->bottom;
-		st_rot->bottom = st_rot->top;
-		temp->next = NULL;
-		st_rot->top = temp;
-	}
-	return ;
+	s->top = NULL;
+	s->bottom = NULL;
+	return (s);
 }

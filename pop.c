@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_func.c                                      :+:      :+:    :+:   */
+/*   pop.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 21:24:37 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/14 21:10:32 by changhyl         ###   ########.fr       */
+/*   Created: 2023/06/14 22:16:30 by changhyl          #+#    #+#             */
+/*   Updated: 2023/06/14 22:24:42 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-void	rotate(t_stack *st_rot)
+int	pop(t_stack *st) // 추후 코드 봐서 리턴값 수정 예정.
 {
-	t_list	*temp;
-
-	if (st_rot->bottom != NULL && st_rot->bottom->next != NULL)
-	{
-		temp = st_rot->bottom;
-		while (temp->next != st_rot->top)
-			temp = temp->next;
-		st_rot->top->next = st_rot->bottom;
-		st_rot->bottom = st_rot->top;
-		temp->next = NULL;
-		st_rot->top = temp;
-	}
-	return ;
 }
