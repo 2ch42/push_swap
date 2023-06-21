@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   mem_clear.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 21:24:56 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/21 22:26:52 by changhyl         ###   ########.fr       */
+/*   Created: 2023/06/21 16:29:11 by changhyl          #+#    #+#             */
+/*   Updated: 2023/06/21 17:11:59 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+void	mem_clear(t_stack *stack)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_list	*p;
+	t_lsit	*q;
 
-	a = (t_stack *)malloc(sizeof(t_stack));//null로 초기화 시켜주는거 포함해서 새로 함수 짜기.
-	if (!a)
-		return (0);
-	b = (t_stack *)malloc(sizeof(t_stack));
-	if (!b)
+	if (stack->bottom == NULL)
+		free(stack);
+	else
 	{
-		mem_clear(a);
-		return (0);
+		p = stack->bottom->next;
+		q = stack->bottom;
+		while (p != NULL)
+		{
+			free(q);
+			q = NULL;
+			q = p;
+			p = p->next;
+		}
+		free(q);
+		q = NULL;
+		free(stack);
+		stack = NULL;
 	}
-	if (argc == 1)
-		return (0);
-	if (check_input(argc, argv, a, b) == -1)
-	{
-		mem_clear(a);
-		mem_clear(b);
-	}
-	push
+	return ;
 }

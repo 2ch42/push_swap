@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:11:49 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/15 15:43:49 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/21 16:19:15 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	push(t_stack *st, int num)
 	t_list	*p;
 	int		offset;
 
+	p = (t_list *)malloc(sizeof(t_list));
 	p->num = num;
 	p->next = NULL;
 	st->top = p;

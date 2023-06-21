@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:53:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/14 22:21:10 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/21 17:17:47 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 
 int		ft_atoi(const char *str);
 void	ft_putnbr_fd(int n, int fd);
+void	mem_clear(t_stack *stack);
 void	push(t_stack *st, int num);
 int		pop(t_stack *st, int num);	//추후 코드 따라서 리턴값 수정 예정.
 void	swap(t_stack *st_swap);
