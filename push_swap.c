@@ -29,10 +29,13 @@ int main(int argc, char *argv[])
 	}
 	if (argc == 1)
 		return (0);
-	if (check_input(argc, argv, a, b) == -1)
+	if (check_input(argc, argv, a) == -1)
 	{
 		mem_clear(a);
 		mem_clear(b);
+		error_print();
+		return (0);
 	}
-	push
+	//정렬하는부분
+	//해제하는부분
 }

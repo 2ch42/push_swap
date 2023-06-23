@@ -29,11 +29,11 @@ static int	check_digit(char c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int		i;
-	int		result;
-	int		signal;
+	long long	result;
+	long long	signal;
 	char	*s;
 
 	i = 0;

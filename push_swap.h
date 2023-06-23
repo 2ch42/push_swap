@@ -26,11 +26,11 @@ typedef struct s_stack
 	t_list	*bottom;
 }	t_stack;
 
-int		ft_atoi(const char *str);
+int		ft_strlen(char	*str);
+long long	ft_atoi(const char *str);
 void	ft_putnbr_fd(int n, int fd);
 void	mem_clear(t_stack *stack);
 void	push(t_stack *st, int num);
-int		pop(t_stack *st, int num);	//추후 코드 따라서 리턴값 수정 예정.
 void	swap(t_stack *st_swap);
 void	pop_push(t_stack *st_from, t_stack *st_to);
 void	rotate(t_stack *st_rot);

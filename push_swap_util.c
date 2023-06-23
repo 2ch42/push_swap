@@ -13,6 +13,18 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while(*(str + i))
+	{
+		i++;
+	}
+	return (i);
+}
+
 t_stack	*init_stack(void)
 {
 	t_stack	*s;

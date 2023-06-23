@@ -57,12 +57,13 @@ int	check_dup(t_stack *a, int num)
 			return (1);
 		p = p->next;
 	}
-	return (-1);
+	return (0);
 }
 
-int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
+int	check_input(int argc, char *argv[], t_stack *a)
 {
 	int	i;
+	long long n;
 
 	if (argc  != 3)
 		return (-1);
@@ -71,7 +72,13 @@ int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
 	{
 		if (check_digit(argv[i] == -1))
 			return (-1);
-		if (check_dup(argv
+		if (check_dup(a, argv[i]) == 1)
+			return (-1);
+		n = ft_atoi(argv[i]);
+		if (ft_strlen(argv[i]) > 11 || n > 2146483647 || n < -2147483648)
+			return (-1);
+		push(a, (int)n);
 		i--;
 	}
+	return (1);
 }
