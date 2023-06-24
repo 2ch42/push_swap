@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/21 22:33:12 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/24 18:43:31 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	check_dup(t_stack *a, int num)
 	return (0);
 }
 
-int	check_input(int argc, char *argv[], t_stack *a)
+int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
 {
 	int	i;
 	long long n;
@@ -68,6 +68,8 @@ int	check_input(int argc, char *argv[], t_stack *a)
 	if (argc  != 3)
 		return (-1);
 	i = argc - 1;
+	init_stack(a);
+	init_stack(b);
 	while (i > 0)
 	{
 		if (check_digit(argv[i] == -1))

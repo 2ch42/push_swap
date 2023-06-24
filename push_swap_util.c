@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:21:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/14 21:12:18 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/24 18:39:18 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-t_stack	*init_stack(void)
+void	init_stack(t_stack *st)
 {
-	t_stack	*s;
-
-	s->top = NULL;
-	s->bottom = NULL;
-	return (s);
+	st->top = NULL;
+	st->bottom = NULL;
+	return ;
 }
