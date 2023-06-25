@@ -59,6 +59,8 @@ void	push(t_stack *st, int num)
 	st->top = p;
 	mod_offset(st, offset);
 	p->offset = offset;
+	p->a_count = -1;
+	p->b_count = -1;
 	st->size += 1;
 	return ;
 }

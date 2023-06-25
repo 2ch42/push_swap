@@ -17,7 +17,8 @@ typedef struct s_list
 {
 	int				num;
 	int				offset;
-	int				count;
+	int				a_count;
+	int				b_count;
 	struct s_list	*next;
 }	t_list;
 
