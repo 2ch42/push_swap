@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:53:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/25 17:16:17 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/25 20:05:52 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ typedef struct s_list
 	int				offset;
 	int				a_count;
 	int				b_count;
+	int				rb;
+	int				rrb;
+	int				ra;
+	int				rra;
 	struct s_list	*next;
 }	t_list;
 
