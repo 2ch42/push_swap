@@ -1,51 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_util.c                                   :+:      :+:    :+:   */
+/*   cal_best.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 20:21:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/25 17:15:09 by changhyl         ###   ########.fr       */
+/*   Created: 2023/06/25 17:20:33 by changhyl          #+#    #+#             */
+/*   Updated: 2023/06/25 17:26:46 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "push_swap.h"
 
-int	ft_strlen(char *str)
+void	cal_best_a(t_stack *a, )
 {
-	int	i;
-
-	i = 0;
-	while(*(str + i))
-	{
-		i++;
-	}
-	return (i);
+	
 }
 
-int	cal_pos(t_stack *st, t_list *tar)
+void	cal_best_b(t_stack *b)
 {
-	int		n;
-	t_list	*p;
 
-	n = 1;
-	p = st->bottom;
-	while (p != NULL)
-	{
-		if (p == tar)
-			return (n);
-		p = p->next;
-		n++;
-	}
-	return (-1);
 }
 
-void	init_stack(t_stack *st)
+t_list	cal_best(t_stack *a, t_stack *b)
 {
-	st->size = 0;
-	st->top = NULL;
-	st->bottom = NULL;
-	return ;
+	cal
 }

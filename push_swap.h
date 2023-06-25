@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:53:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/21 17:17:47 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/25 17:16:17 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ typedef struct s_list
 {
 	int				num;
 	int				offset;
+	int				count;
 	struct s_list	*next;
 }	t_list;
 
 typedef struct s_stack
 {
+	int		size;
 	t_list	*top;
 	t_list	*bottom;
 }	t_stack;

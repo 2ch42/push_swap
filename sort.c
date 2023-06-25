@@ -6,39 +6,14 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:29:43 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/24 20:10:18 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/25 17:20:17 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-void	get_pivot(t_stack *st, int *pivot_a, int *pivot_b, int *size)
-{
-	t_list	*p;
-
-	if (!st)
-		return (0);
-	if (st->bottom == NULL)
-		return (0);
-	p = st->bottom;
-	*size = 0;
-	while (p != NULL)
-	{
-		*size += 1;
-		p = p->next;
-	}
-	*pivot_a = size/3;
-	*pivot_b = size/3;
-	return ;
-}
-
-void	cal_min(t_stack *st)
-{
-	
-}
-
-void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size)
+void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b)
 {
 	int	i;
 
@@ -69,13 +44,16 @@ void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size)
 
 void	sort(t_stack *a, t_stack *b)
 {
-	int	size;
 	int	pivot_a;
 	int	pivot_b;
 
-	get_pivot(a, &pivot_a, &pivot_b, size);
-	sort_1(a, pivot_a, pivot_b, size);
+	pivot_a = a->size / 3;
+	pivot_b = pivot_a * 2;
+	sort_1(a, pivot_a, pivot_b);
 	while (a->bottom != NULL)
+	{
 		push_pop(a, b);
+		write(1, "pb\n", 3);
+	}
 	
 }
