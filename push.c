@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:11:49 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/25 16:31:19 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/26 19:27:23 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ void	push(t_stack *st, int num)
 	p->offset = offset;
 	p->a_count = -1;
 	p->b_count = -1;
+	p->ra = 0;
+	p->rra = 0;
+	p->rb = 0;
+	p->rrb = 0;
 	st->size += 1;
 	return ;
 }
