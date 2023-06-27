@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:29:43 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/25 17:20:17 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:05:06 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ void	sort(t_stack *a, t_stack *b)
 		push_pop(a, b);
 		write(1, "pb\n", 3);
 	}
-	
+	sort_2(a, b);
+	write(1, "pa\n", 3);
+	sort_3(a);
 }
