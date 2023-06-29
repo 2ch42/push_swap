@@ -6,14 +6,14 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:29:43 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 15:49:05 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 18:47:41 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b)
+void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size)
 {
 	int	i;
 
@@ -49,10 +49,10 @@ void	sort(t_stack *a, t_stack *b)
 
 	pivot_a = a->size / 3;
 	pivot_b = pivot_a * 2;
-	sort_1(a, pivot_a, pivot_b);
+	sort_1(a, b, pivot_a, pivot_sb, a->size);
 	while (a->bottom != NULL)
 	{
-		push_pop(a, b);
+		pop_push(a, b);
 		write(1, "pb\n", 3);
 	}
 	sort_2(a, b);
