@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:31 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/25 16:33:36 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 22:08:01 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ static void	pop_push_one(t_stack *st_from, t_stack *st_to)
 {
 	st_to->top->next = st_from->top;
 	st_to->top = st_from->top;
+	st_to->bottom = st_from->top;
 	st_from->top = NULL;
-	st_from->next = NULL;
+	st_from->bottom = NULL;
+	st_from->size = 0;
+	st_to->size = 1;
 }
 
 void	pop_push(t_stack *st_from, t_stack *st_to)
@@ -30,10 +33,10 @@ void	pop_push(t_stack *st_from, t_stack *st_to)
 		return ;
 	if (p == st_from->top)
 	{
-		pop_push_one(st_from, to);
+		pop_push_one(st_from, st_to);
 		return ;
 	}
-	while (temp->next != st_from->top)
+	while (p->next != st_from->top)
 	{
 		p = p->next;
 	}

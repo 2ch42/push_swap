@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/29 21:03:37 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 21:04:21 by changhyl         ###   ########.fr       */
+/*   Created: 2023/06/29 22:14:26 by changhyl          #+#    #+#             */
+/*   Updated: 2023/06/29 22:14:39 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void	cal_a(t_stack *a, t_stack *b, t_list *p)
 	int		min_d;
 
 	q = a->bottom;
+	min_d = 0;
 	if (q == NULL)
 		p->a_count = 0;
-	min_d = 0;
 	else
 	{
 		while (q != NULL)
 		{
-			if (mind_d == 0 || get_abs(p->offset - q->offset) < get_abs(min_d))
+			if (min_d == 0 || get_abs(p->offset - q->offset) < get_abs(min_d))
 			{
 				min_d = p->offset - q->offset;
 				r = q;
@@ -77,15 +77,15 @@ void	cal_b(t_stack *a, t_stack *b)
 	while (p != NULL)
 	{
 		pos = cal_pos(b, p);
-		if (n < (b->size / 2))
+		if (pos < (b->size / 2))
 		{
 			p->b_count = b->size - pos;
-			rrb = 1;
+			p->rrb = 1;
 		}
 		else
 		{
 			p->b_count = pos;
-			rb = 1;
+			p->rb = 1;
 		}
 		cal_a(a, b, p);
 		p = p->next;
@@ -93,7 +93,7 @@ void	cal_b(t_stack *a, t_stack *b)
 	return ;
 }
 
-t_list	cal_best(t_stack *a, t_stack *b)
+t_list	*cal_best(t_stack *a, t_stack *b)
 {
 	int	min_count;
 	t_list	*p;

@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 21:40:47 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 22:05:10 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-int	ft_isdigit(int c)
+static int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -22,7 +22,7 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int	check_digit(char *str)
+static int	check_digit(char *str)
 {
 	int	i;
 
@@ -43,7 +43,7 @@ void	error_print(void)
 	write(3,"Error\n", 6);
 }
 
-int	check_dup(t_stack *a, int num)
+static int	check_dup(t_stack *a, int num)
 {
 	t_list	*p;
 
@@ -69,12 +69,12 @@ int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
 	init_stack(b);
 	while (i > 0)
 	{
-		if (check_digit(argv[i] == -1))
-			return (-1);
-		if (check_dup(a, argv[i]) == 1)
+		if (check_digit(argv[i]) == -1)
 			return (-1);
 		n = ft_atoi(argv[i]);
 		if (ft_strlen(argv[i]) > 11 || n > 2146483647 || n < -2147483648)
+			return (-1);
+		if (check_dup(a, n) == 1)
 			return (-1);
 		push(a, (int) n);
 		i--;
