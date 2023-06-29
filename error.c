@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/24 18:43:31 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:51:00 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,12 @@ int	check_digit(char *str)
 {
 	int	i;
 
-	i = 0;
+	if (*str != '-' && ft_isdigit(*str) == 0)
+		return (-1);
+	i = 1;
 	while (*(str + i))
 	{
-		if (*(str + i) =='-')
-		{
-			if (ft_isdigit(*(str + i + 1) == 0))
-				return (-1);
-		}
-		else if (ft_isdigit(*(str + i) == 0))
+		if (ft_isdigit(*(str + i)) == 0)
 			return (-1);
 		i++;
 	}
@@ -48,8 +45,6 @@ int	check_dup(t_stack *a, int num)
 {
 	t_list	*p;
 
-	if (a->bottom == NULL)
-		return (0);
 	p = a->bottom;
 	while (p != NULL)
 	{
@@ -62,8 +57,8 @@ int	check_dup(t_stack *a, int num)
 
 int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
 {
-	int	i;
-	long long n;
+	int			i;
+	long long	n;
 
 	if (argc  != 3)
 		return (-1);
@@ -79,7 +74,7 @@ int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
 		n = ft_atoi(argv[i]);
 		if (ft_strlen(argv[i]) > 11 || n > 2146483647 || n < -2147483648)
 			return (-1);
-		push(a, (int)n);
+		push(a, (int) n);
 		i--;
 	}
 	return (1);

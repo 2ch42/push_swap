@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:11:49 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/26 19:27:23 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 16:40:34 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,18 @@ void	push(t_stack *st, int num)
 	int		offset;
 
 	p = (t_list *)malloc(sizeof(t_list));
+	if (!p)
+		exit(1);
+	init_node(p);
 	p->num = num;
-	p->next = NULL;
-	offset = get_offset(st, num);
 	if (st->bottom == NULL)
 		st->bottom = p;
 	else
 		st->top->next = p;
 	st->top = p;
+	offset = get_offset(st, num);
 	mod_offset(st, offset);
 	p->offset = offset;
-	p->a_count = -1;
-	p->b_count = -1;
-	p->ra = 0;
-	p->rra = 0;
-	p->rb = 0;
-	p->rrb = 0;
 	st->size += 1;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:21:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/26 16:51:04 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 18:47:04 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ int	ft_strlen(char *str)
 		i++;
 	}
 	return (i);
+}
+
+int	get_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
 }
 
 int	cal_pos(t_stack *st, t_list *tar)
