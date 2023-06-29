@@ -6,10 +6,11 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:29:43 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 21:10:57 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 21:43:38 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdlib.h>
 #include "push_swap.h"
 

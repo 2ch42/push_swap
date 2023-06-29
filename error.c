@@ -6,11 +6,13 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 15:51:00 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 21:40:47 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
+#include "push_swap.h"
 
 int	ft_isdigit(int c)
 {

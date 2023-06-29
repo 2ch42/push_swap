@@ -6,11 +6,12 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:56 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/24 18:42:23 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 21:41:55 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "push_swap.h"
 
 int main(int argc, char *argv[])

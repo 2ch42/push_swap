@@ -6,10 +6,12 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:11:14 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/27 16:45:59 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 21:44:13 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
 #include "push_swap.h"
 
 void	sort_3_rot(t_stack *a, int size, int pos)
