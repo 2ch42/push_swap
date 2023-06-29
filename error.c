@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 22:05:10 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/29 22:28:12 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static int	check_digit(char *str)
 {
 	int	i;
 
+	if (*str == '-' && !(*(str + 1)))
+		return (-1);
 	if (*str != '-' && ft_isdigit(*str) == 0)
 		return (-1);
 	i = 1;
@@ -62,8 +64,6 @@ int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
 	int			i;
 	long long	n;
 
-	if (argc  != 3)
-		return (-1);
 	i = argc - 1;
 	init_stack(a);
 	init_stack(b);
