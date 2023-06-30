@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort2_cal.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: changhyl <changhyl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 22:14:26 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 22:14:39 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:30:24 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ void	cal_b(t_stack *a, t_stack *b)
 		pos = cal_pos(b, p);
 		if (pos < (b->size / 2))
 		{
-			p->b_count = b->size - pos;
+			p->b_count = pos;
 			p->rrb = 1;
 		}
 		else
 		{
-			p->b_count = pos;
+			p->b_count = b->size - pos;
 			p->rb = 1;
 		}
 		cal_a(a, b, p);

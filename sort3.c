@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: changhyl <changhyl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:11:14 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 21:44:13 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:32:42 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sort_3_rot(t_stack *a, int size, int pos)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (size / 2 >= pos)
 	{
 		while (i < pos)

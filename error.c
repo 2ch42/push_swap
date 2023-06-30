@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 22:28:12 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:49:33 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static int	check_digit(char *str)
 {
 	int	i;
 
-	if (*str == '-' && !(*(str + 1)))
+	if (ft_strlen(str) == 1 && *str == '-')
 		return (-1);
-	if (*str != '-' && ft_isdigit(*str) == 0)
-		return (-1);
-	i = 1;
+	i = 0;
+	if (*str == '-')
+		i++;
 	while (*(str + i))
 	{
 		if (ft_isdigit(*(str + i)) == 0)
@@ -42,7 +42,7 @@ static int	check_digit(char *str)
 
 void	error_print(void)
 {
-	write(3,"Error\n", 6);
+	write(1,"Error\n", 6);
 }
 
 static int	check_dup(t_stack *a, int num)
