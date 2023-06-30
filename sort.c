@@ -50,7 +50,6 @@ void	sort(t_stack *a, t_stack *b)
 
 	pivot_a = a->size / 3;
 	pivot_b = pivot_a * 2;
-
 	sort_1(a, b, pivot_a, (int)pivot_b, a->size);
 	while (a->bottom != NULL)
 	{
