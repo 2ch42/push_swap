@@ -43,6 +43,7 @@ void		init_stack(t_stack *st);
 void		mem_clear(t_stack *st);
 void		error_print(void);
 int			check_input(int argc, char *argv[], t_stack *a, t_stack *b);
+int			check_sorted(t_stack *st);
 void		push(t_stack *st, int num);
 void		swap(t_stack *st);
 void		pop_push(t_stack *st_from, t_stack *st_to);

@@ -49,14 +49,15 @@ void	cal_a(t_stack *a, t_stack *b, t_list *p)
 	int		min_d;
 
 	q = a->bottom;
-	min_d = 0;
 	if (q == NULL)
 		p->a_count = 0;
 	else
 	{
+		min_d = p->offset - a->bottom->offset;
+		r = q;
 		while (q != NULL)
 		{
-			if (min_d == 0 || get_abs(p->offset - q->offset) < get_abs(min_d))
+			if (get_abs(p->offset - q->offset) < get_abs(min_d))
 			{
 				min_d = p->offset - q->offset;
 				r = q;
@@ -77,7 +78,7 @@ void	cal_b(t_stack *a, t_stack *b)
 	while (p != NULL)
 	{
 		pos = cal_pos(b, p);
-		if (pos < (b->size / 2))
+		if (pos <= (b->size / 2))
 		{
 			p->b_count = pos;
 			p->rrb = 1;
@@ -104,10 +105,9 @@ t_list	*cal_best(t_stack *a, t_stack *b)
 	if (p == NULL)
 		return (NULL);
 	min_count = p->a_count + p->b_count;
-	q = p;
 	while (p != NULL)
 	{
-		if (p->a_count + p->b_count < min_count)
+		if (p->a_count + p->b_count <= min_count)
 		{
 			min_count = p->a_count + p->b_count;
 			q = p;

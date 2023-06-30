@@ -48,6 +48,8 @@ void	sort(t_stack *a, t_stack *b)
 	int	pivot_a;
 	int	pivot_b;
 
+	if (check_sorted(a) == 1)
+		return ;
 	pivot_a = a->size / 3;
 	pivot_b = pivot_a * 2;
 	sort_1(a, b, pivot_a, (int)pivot_b, a->size);
