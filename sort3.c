@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:11:14 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/30 17:32:42 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:35:36 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sort_3_rot(t_stack *a, int size, int pos)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	if (size / 2 >= pos)
 	{
 		while (i < pos)
@@ -30,7 +30,7 @@ void	sort_3_rot(t_stack *a, int size, int pos)
 	}
 	else
 	{
-		while (i < size - pos + 1)
+		while (i < size - pos)
 		{
 			rotate(a);
 			write(1, "ra\n", 3);

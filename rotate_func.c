@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:37 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 18:40:45 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/30 20:07:17 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@
 void	rotate(t_stack *st)
 {
 	t_list	*temp;
-
-	if (st->bottom != NULL && st->bottom->next != NULL)
+	if (st->bottom == NULL)
+		return ;
+	if (st->bottom->next == NULL)
+		return ;
+	else
 	{
 		temp = st->bottom;
 		while (temp->next != st->top)

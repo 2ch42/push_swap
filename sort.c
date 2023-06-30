@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:29:43 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/30 17:06:38 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/06/30 20:17:49 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size)
 
 void	sort(t_stack *a, t_stack *b)
 {
-	int			pivot_a;
-	long long	pivot_b;
+	int	pivot_a;
+	int	pivot_b;
 
 	pivot_a = a->size / 3;
 	pivot_b = pivot_a * 2;
