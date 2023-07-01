@@ -13,6 +13,14 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
+static void	init_rot(t_list *p)
+{
+	p->ra = 0;
+	p->rra = 0;
+	p->rb = 0;
+	p->rrb = 0;
+}
+
 void	cal_a_rot(t_stack *a, t_list *p, t_list *r)
 {
 	int	n;
@@ -53,7 +61,7 @@ void	cal_a(t_stack *a, t_stack *b, t_list *p)
 		p->a_count = 0;
 	else
 	{
-		min_d = p->offset - a->bottom->offset;
+		min_d = p->offset - q->offset;
 		r = q;
 		while (q != NULL)
 		{
@@ -77,6 +85,7 @@ void	cal_b(t_stack *a, t_stack *b)
 	p = b->bottom;
 	while (p != NULL)
 	{
+		init_rot(p);
 		pos = cal_pos(b, p);
 		if (pos <= (b->size / 2))
 		{

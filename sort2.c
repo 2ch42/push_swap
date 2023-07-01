@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "push_swap.h"
+#include <stdio.h>
 
 void	sort_2_rot_a(t_stack *a, t_list *p)
 {
@@ -24,7 +25,7 @@ void	sort_2_rot_a(t_stack *a, t_list *p)
 			write(1, "ra\n", 3);
 		}
 	}
-	if (p->rra == 1)
+	else if (p->rra == 1)
 	{
 		while (p->a_count-- > 0)
 		{
@@ -45,7 +46,7 @@ void	sort_2_rot_b(t_stack *b, t_list *p)
 			write(1, "rb\n", 3);
 		}
 	}
-	if (p->rrb == 1)
+	else if (p->rrb == 1)
 	{
 		while (p->b_count-- > 0)
 		{
