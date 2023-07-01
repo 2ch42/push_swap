@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:29:43 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/30 20:17:49 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/01 19:55:55 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	sort(t_stack *a, t_stack *b)
 	int	pivot_b;
 
 	if (check_sorted(a) == 1)
+		return ;
+	if (special_sort(a, b) == 1)
 		return ;
 	pivot_a = a->size / 3;
 	pivot_b = pivot_a * 2;

@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:53:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:16:59 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/01 19:55:42 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void		mem_clear(t_stack *st);
 void		error_print(void);
 int			check_input(int argc, char *argv[], t_stack *a, t_stack *b);
 int			check_sorted(t_stack *st);
+int			special_sort(t_stack *a, t_stack *b);
 void		push(t_stack *st, int num);
 void		swap(t_stack *st);
 void		pop_push(t_stack *st_from, t_stack *st_to);
