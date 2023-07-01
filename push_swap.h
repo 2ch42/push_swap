@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:53:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/29 22:11:53 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:16:59 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct s_stack
 
 int			ft_strlen(char	*str);
 long long	ft_atoi(const char *str);
-void		ft_putnbr_fd(int n, int fd);
 int			get_abs(int n);
 int			cal_pos(t_stack *st, t_list *tar);
 void		init_node(t_list *p);
@@ -52,7 +51,7 @@ void		rev_rotate(t_stack *st);
 void		sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size);
 void		sort(t_stack *a, t_stack *b);
 void		cal_a_rot(t_stack *a, t_list *p, t_list *r);
-void		cal_a(t_stack *a, t_stack *b, t_list *p);
+void		cal_a(t_stack *a, t_list *p);
 void		cal_b(t_stack *a, t_stack *b);
 t_list		*cal_best(t_stack *a, t_stack *b);
 void		sort_2_rot_a(t_stack *a, t_list *p);

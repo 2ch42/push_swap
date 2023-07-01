@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 22:14:26 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/30 17:30:24 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:12:18 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	cal_a_rot(t_stack *a, t_list *p, t_list *r)
 		p->ra = 1;
 }
 
-void	cal_a(t_stack *a, t_stack *b, t_list *p)
+void	cal_a(t_stack *a, t_list *p)
 {
 	t_list	*q;
 	t_list	*r;
@@ -97,7 +97,7 @@ void	cal_b(t_stack *a, t_stack *b)
 			p->b_count = b->size - pos;
 			p->rb = 1;
 		}
-		cal_a(a, b, p);
+		cal_a(a, p);
 		p = p->next;
 	}
 	return ;

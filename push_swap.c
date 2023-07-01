@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:56 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/30 15:59:38 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:11:16 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;

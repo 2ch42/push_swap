@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:21:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/06/30 20:11:59 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:11:42 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while(*(str + i))
+	while (*(str + i))
 	{
 		i++;
 	}
