@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   mem_clear_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 21:24:56 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:37:37 by ch               ###   ########.fr       */
+/*   Created: 2023/06/21 16:29:11 by changhyl          #+#    #+#             */
+/*   Updated: 2023/07/01 18:30:36 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-int	main(int argc, char *argv[])
+void	mem_clear(t_stack *st)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_list	*p;
+	t_list	*q;
 
-	if (argc == 1)
-		return (0);
-	a = (t_stack *)malloc(sizeof(t_stack));
-	if (!a)
-		return (0);
-	b = (t_stack *)malloc(sizeof(t_stack));
-	if (!b)
+	if (st->bottom == NULL)
+		free(st);
+	else
 	{
-		mem_clear(a);
-		return (0);
+		p = st->bottom->next;
+		q = st->bottom;
+		while (p != NULL)
+		{
+			free(q);
+			q = NULL;
+			q = p;
+			p = p->next;
+		}
+		free(q);
+		q = NULL;
+		free(st);
+		st = NULL;
 	}
-	if (check_input(argc, argv, a, b) == -1)
-	{
-		mem_clear(a);
-		mem_clear(b);
-		error_print();
-		return (0);
-	}
-	sort(a, b);
-	mem_clear(a);
-	mem_clear(b);
-	return (0);
+	return ;
 }

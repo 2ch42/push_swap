@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rotate_func.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 21:24:56 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:37:37 by ch               ###   ########.fr       */
+/*   Created: 2023/06/01 21:24:37 by changhyl          #+#    #+#             */
+/*   Updated: 2023/06/30 20:07:17 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	rotate(t_stack *st)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	if (argc == 1)
-		return (0);
-	a = (t_stack *)malloc(sizeof(t_stack));
-	if (!a)
-		return (0);
-	b = (t_stack *)malloc(sizeof(t_stack));
-	if (!b)
+	t_list	*temp;
+	if (st->bottom == NULL)
+		return ;
+	if (st->bottom->next == NULL)
+		return ;
+	else
 	{
-		mem_clear(a);
-		return (0);
+		temp = st->bottom;
+		while (temp->next != st->top)
+			temp = temp->next;
+		st->top->next = st->bottom;
+		st->bottom = st->top;
+		temp->next = NULL;
+		st->top = temp;
 	}
-	if (check_input(argc, argv, a, b) == -1)
-	{
-		mem_clear(a);
-		mem_clear(b);
-		error_print();
-		return (0);
-	}
-	sort(a, b);
-	mem_clear(a);
-	mem_clear(b);
-	return (0);
+	return ;
 }
