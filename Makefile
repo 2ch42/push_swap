@@ -37,7 +37,7 @@ clean:
 	rm -f $(OBJS1) $(OBJS2)
 
 fclean:	clean
-	rm -f $(PUSH_SWAP)
+	rm -f $(NAME)
 	rm -f $(CHECKER)
 
 re:
