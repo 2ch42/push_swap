@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 20:40:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/04 03:19:55 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/04 04:21:03 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ int	get_com(t_stack *a, t_stack *b)
 		str = get_next_line(0);
 	}
 	free(str);
+	str = NULL;
 	return (1);
 }
