@@ -19,6 +19,8 @@ void	swap(t_stack *st)
 	int		tmp_num;
 	int		tmp_offset;
 
+	if (st->bottom == NULL)
+		return ;
 	if (st->bottom != NULL && st->bottom->next != NULL)
 	{
 		temp = st->bottom;
