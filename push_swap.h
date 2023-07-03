@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:53:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 19:55:42 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/03 19:43:17 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ typedef struct s_list
 {
 	int				num;
 	int				offset;
+	int				s_offset;
 	int				a_count;
 	int				b_count;
 	int				rb;
@@ -43,13 +44,14 @@ void		mem_clear(t_stack *st);
 void		error_print(void);
 int			check_input(int argc, char *argv[], t_stack *a, t_stack *b);
 int			check_sorted(t_stack *st);
+void		get_s_offset(t_stack *st);
 int			special_sort(t_stack *a, t_stack *b);
 void		push(t_stack *st, int num);
 void		swap(t_stack *st);
 void		pop_push(t_stack *st_from, t_stack *st_to);
 void		rotate(t_stack *st);
 void		rev_rotate(t_stack *st);
-void		sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size);
+void		sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b);
 void		sort(t_stack *a, t_stack *b);
 void		cal_a_rot(t_stack *a, t_list *p, t_list *r);
 void		cal_a(t_stack *a, t_list *p);

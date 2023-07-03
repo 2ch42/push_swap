@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:29:43 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 19:55:55 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/03 16:17:27 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size)
+void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b)
 {
-	int	i;
+	int	size;
 
-	i = 0;
-	while (i < size)
+	size = a->size;
+	while (size-- > 0)
 	{
 		if (a->top->offset > pivot_b)
 		{
@@ -38,7 +38,6 @@ void	sort_1(t_stack *a, t_stack *b, int pivot_a, int pivot_b, int size)
 			rotate(b);
 			write(1, "rb\n", 3);
 		}
-		i++;
 	}
 	return ;
 }
@@ -54,7 +53,7 @@ void	sort(t_stack *a, t_stack *b)
 		return ;
 	pivot_a = a->size / 3;
 	pivot_b = pivot_a * 2;
-	sort_1(a, b, pivot_a, (int)pivot_b, a->size);
+	sort_1(a, b, pivot_a, (int)pivot_b);
 	while (a->bottom != NULL)
 	{
 		pop_push(a, b);

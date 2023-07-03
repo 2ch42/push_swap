@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:24:29 by changhyl          #+#    #+#             */
-/*   Updated: 2023/02/19 18:23:50 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/03 16:15:42 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static int	check_digit(char c)
 
 long long	ft_atoi(const char *str)
 {
-	int		i;
+	int			i;
 	long long	result;
 	long long	signal;
-	char	*s;
+	char		*s;
 
 	i = 0;
 	result = 0;

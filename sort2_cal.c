@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 22:14:26 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:12:18 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/03 18:49:46 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	cal_a(t_stack *a, t_list *p)
 void	cal_b(t_stack *a, t_stack *b)
 {
 	t_list	*p;
-	int	pos;
+	int		pos;
 
 	p = b->bottom;
 	while (p != NULL)
@@ -105,7 +105,7 @@ void	cal_b(t_stack *a, t_stack *b)
 
 t_list	*cal_best(t_stack *a, t_stack *b)
 {
-	int	min_count;
+	int		min_count;
 	t_list	*p;
 	t_list	*q;
 
