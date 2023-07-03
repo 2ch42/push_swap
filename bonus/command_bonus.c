@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 20:40:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/03 22:38:56 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/03 22:41:40 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ int	get_com(t_stack *a, t_stack *b)
 	while (str)
 	{
 		len = ft_strlen(str);
-		if (ft_strncmp(str, "sa\n", len) == 0
-			|| ft_strncmp(str, "sb\n", len) == 0
-			|| ft_strncmp(str, "pa\n", len) == 0
-			|| ft_strncmp(str, "pb\n", len) == 0
-			|| ft_strncmp(str, "ra\n", len) == 0 || ft_strncmp(str, "rb\n", len) == 0
-			|| ft_strncmp(str, "rra\n", len) == 0 || ft_strncmp(str, "rrb\n", len) == 0)
+		if (ft_strncmp(str, "sa\n", len) == 0 || ft_strncmp(str, "sb\n", len)
+			== 0 || ft_strncmp(str, "pa\n", len) == 0 || ft_strncmp
+			(str, "pb\n", len) == 0 || ft_strncmp(str, "ra\n", len) == 0
+			|| ft_strncmp(str, "rb\n", len) == 0 || ft_strncmp(str, "rra\n", len)
+			== 0 || ft_strncmp(str, "rrb\n", len) == 0)
 			one_get_com(a, b, str, len);
-		else if (ft_strncmp(str, "ss\n", len) == 0 || ft_strncmp(str, "rr\n", len) == 0
+		else if (ft_strncmp(str, "ss\n", len) == 0
+			|| ft_strncmp(str, "rr\n", len) == 0
 			|| ft_strncmp(str, "rrr\n", len) == 0)
 			mult_get_com(a, b, str, len);
 		else
