@@ -6,12 +6,12 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:37 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/03 18:36:24 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/03 21:26:35 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 void	rotate(t_stack *st)
 {

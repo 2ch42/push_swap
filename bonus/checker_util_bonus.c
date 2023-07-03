@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_util.c                                   :+:      :+:    :+:   */
+/*   checker_util_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:21:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:11:42 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/03 21:35:48 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 int	ft_strlen(char *str)
 {
@@ -25,39 +25,28 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	get_abs(int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (n < 0)
-		n *= -1;
-	return (n);
-}
+	unsigned int	i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-int	cal_pos(t_stack *st, t_list *tar)
-{
-	int		n;
-	t_list	*p;
-
-	n = 1;
-	p = st->bottom;
-	while (p != NULL)
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	i = 0;
+	if (n == 0)
 	{
-		if (p == tar)
-			return (n);
-		p = p->next;
-		n++;
+		return (0);
 	}
-	return (-1);
+	while ((*(str1 + i) == *(str2 + i)) && *(str1 + i) && *(str2 + i)
+		&& (i + 1) < n)
+		i++;
+	return (*(str1 + i) - *(str2 + i));
 }
 
 void	init_node(t_list *p)
 {
 	p->next = NULL;
-	p->a_count = -1;
-	p->b_count = -1;
-	p->ra = 0;
-	p->rra = 0;
-	p->rb = 0;
-	p->rrb = 0;
 }
 
 void	init_stack(t_stack *st)

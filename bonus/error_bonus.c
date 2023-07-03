@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   error_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:13:07 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/03 22:37:14 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 static int	ft_isdigit(int c)
 {
@@ -72,7 +72,7 @@ int	check_input(int argc, char *argv[], t_stack *a, t_stack *b)
 		if (check_digit(argv[i]) == -1)
 			return (-1);
 		n = ft_atoi(argv[i]);
-		if (ft_strlen(argv[i]) > 11 || n > 2146483647 || n < -2147483648)
+		if (ft_strlen(argv[i]) > 11 || n > 2147483647 || n < -2147483648)
 			return (-1);
 		if (check_dup(a, n) == 1)
 			return (-1);

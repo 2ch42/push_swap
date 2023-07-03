@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:56 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:30:25 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/03 22:10:20 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	t_stack	*a;
 	t_stack	*b;
 
-	if (argc == 1)
+	if (argc < 2)
 		return (0);
 	a = (t_stack *)malloc(sizeof(t_stack));
 	if (!a)
@@ -32,13 +32,12 @@ int	main(int argc, char *argv[])
 	}
 	if (check_input(argc, argv, a, b) == -1)
 	{
-		mem_clear(a);
-		mem_clear(b);
+		mem_two_clear(a, b);
 		error_print();
 		return (0);
 	}
-	sort(a, b);
-	mem_clear(a);
-	mem_clear(b);
+	if (get_com(a, b) == 1)
+		get_checked(a);
+	mem_two_clear(a, b);
 	return (0);
 }

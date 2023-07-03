@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 16:29:11 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/01 18:30:36 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/03 22:08:57 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,10 @@ void	mem_clear(t_stack *st)
 		st = NULL;
 	}
 	return ;
+}
+
+void	mem_two_clear(t_stack *st1, t_stack *st2)
+{
+	mem_clear(st1);
+	mem_clear(st2);
 }
