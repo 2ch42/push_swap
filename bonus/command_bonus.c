@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 20:40:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/04 02:45:51 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/04 03:02:57 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static void	mult_get_com(t_stack *a, t_stack *b, char *str, int len)
 		rev_rotate(a);
 		rev_rotate(b);
 	}
+	free(str);
+	str = NULL;
 }
 
 static void	one_get_com(t_stack *a, t_stack *b, char *str, int len)
@@ -51,12 +53,15 @@ static void	one_get_com(t_stack *a, t_stack *b, char *str, int len)
 		swap(a);
 	else if (ft_strncmp(str, "sb\n", len) == 0)
 		swap(b);
+	free(str);
+	str = NULL;
 }
 
-static int	err_case(void)
+static int	err_case(char **str)
 {
 	write(1, "Error\n", 6);
 	return (-1);
+	free(*str);
 }
 
 int	get_com(t_stack *a, t_stack *b)
@@ -78,7 +83,7 @@ int	get_com(t_stack *a, t_stack *b)
 			== 0 || ft_strncmp(str, "rrr\n", len) == 0)
 			mult_get_com(a, b, str, len);
 		else
-			return (err_case());
+			return (err_case(&str));
 		str = get_next_line(0);
 	}
 	free(str);
