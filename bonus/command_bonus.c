@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 20:40:57 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/04 03:02:57 by ch               ###   ########.fr       */
+/*   Updated: 2023/07/04 03:19:55 by ch               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ static void	one_get_com(t_stack *a, t_stack *b, char *str, int len)
 static int	err_case(char **str)
 {
 	write(1, "Error\n", 6);
-	return (-1);
 	free(*str);
+	str = NULL;
+	return (-1);
 }
 
 int	get_com(t_stack *a, t_stack *b)
