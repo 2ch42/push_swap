@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:24:56 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/03 22:10:20 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/04 15:50:16 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	if (get_com(a, b) == 1)
-		get_checked(a);
+		get_checked(a, b);
 	mem_two_clear(a, b);
 	return (0);
 }

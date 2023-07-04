@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:35:32 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/03 21:24:48 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/04 15:50:43 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	check_sorted(t_stack *st)
 	return (1);
 }
 
-void	get_checked(t_stack *a)
+void	get_checked(t_stack *a, t_stack *b)
 {
-	if (check_sorted(a) == 1)
+	if (check_sorted(a) == 1 && b->size == 0)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
