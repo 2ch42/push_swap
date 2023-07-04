@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "push_swap.h"
-#include <stdio.h>
 
 void	sort_2_rot_a(t_stack *a, t_list *p)
 {
