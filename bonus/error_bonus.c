@@ -6,7 +6,7 @@
 /*   By: changhyl <changhyl@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:01:23 by changhyl          #+#    #+#             */
-/*   Updated: 2023/07/03 22:37:14 by changhyl         ###   ########.fr       */
+/*   Updated: 2023/07/06 16:53:39 by changhyl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static int	check_digit(char *str)
 {
 	int	i;
 
+	if (*str == '\0')
+		return (-1);
 	if (ft_strlen(str) == 1 && *str == '-')
 		return (-1);
 	i = 0;
